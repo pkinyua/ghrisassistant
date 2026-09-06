@@ -1,5 +1,5 @@
 import React from 'react';
-import Chatbot from './components/Chatbot.jsx';
+import ChatBot from './components/ChatBot.jsx';
 import KenyaFlag from './components/KenyaFlag.jsx';
 import './index.css';
 
@@ -39,7 +39,7 @@ function App() {
         </div>
 
         {/* Chatbot */}
-        <Chatbot />
+        <ChatBot />
 
         {/* Footer */}
         <div className="text-center mt-4">

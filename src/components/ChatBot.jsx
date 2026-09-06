@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import KenyaFlag from './KenyaFlag.jsx';
 import { kenyaKnowledge } from '../utils/kenyaKnowledge.js';
 
-const Chatbot = () => {
+const ChatBot = () => {
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState('');
   const [isTyping, setIsTyping] = useState(false);
@@ -224,4 +224,4 @@ const Chatbot = () => {
   );
 };
 
-export default Chatbot;
+export default ChatBot;
