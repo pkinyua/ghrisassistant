@@ -1,6 +1,6 @@
 import React from 'react';
-import Chatbot from './components/Chatbot';
-import KenyaFlag from './components/KenyaFlag';
+import Chatbot from './components/Chatbot.jsx';
+import KenyaFlag from './components/KenyaFlag.jsx';
 import './index.css';
 
 function App() {
