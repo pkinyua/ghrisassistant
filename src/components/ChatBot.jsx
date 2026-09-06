@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
-import KenyaFlag from './KenyaFlag';
-import { kenyaKnowledge } from '../utils/kenyaKnowledge';
+import KenyaFlag from './KenyaFlag.jsx';
+import { kenyaKnowledge } from '../utils/kenyaKnowledge.js';
 
 const Chatbot = () => {
   const [messages, setMessages] = useState([]);
