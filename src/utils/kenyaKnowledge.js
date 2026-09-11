@@ -68,7 +68,7 @@ Nisaidie kwa kuandika swali lako hapa chini.`
     keywords: ['first appointment', 'date of first appointment'],
     response: `📅 Kutatua 'Date of First Appointment':
 
-1. Kama siku na mwezi wa kuzaliwa iko chini ya 12, jaribu kubadilisha. Kwa mfano kama haijakubali 09-03-2000, jaribu kuweka 03-09-2000.
+1. Kama siku na mwezi wa kuajiriwa iko chini ya 12, jaribu kubadilisha. Kwa mfano kama haijakubali 09-03-2000, jaribu kuweka 03-09-2000.
 2. Jaribu kutumia (Date of Current Appointment).
 3. Wasiliana na HR ili kupata tarehe haswa ya DOFA`
   },

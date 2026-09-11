@@ -104,10 +104,10 @@ const ChatBot = () => {
               <KenyaFlag className="w-12 h-8" />
             </div>
             <h2 className="text-2xl font-semibold text-[#2A3A4A] mb-2">
-              Karibu GHRIS! 👋
+              Karibu GHRIS Assistant! 👋
             </h2>
             <p className="text-[#4A5A6A] text-base mb-6 max-w-xs mx-auto">
-              I'm here to help you with GHRIS services. How can I assist you today?
+              I'm here to help you with GHRIS service FAQs. How can I assist you today?
             </p>
             <div className="grid grid-cols-2 gap-3 max-w-sm mx-auto">
               {quickReplies.map((reply, index) => (
