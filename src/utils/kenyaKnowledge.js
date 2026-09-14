@@ -31,8 +31,8 @@ Nisaidie kwa kuandika swali lako hapa chini.`
 7. Bonyeza 'Submit'`
   },
   uploadDocuments : {
-    keywords: ['upload documents', 'appointee', 'new appointee'],
-    response: `📄 Maelekezo ya Kubadilisha Password:
+    keywords: ['documents', 'upload'],
+    response: `📄 Maelekezo ya Kupakia Hati:
 
 1. Nenda kwenye portal ya GHRIS
 2. Ingia upande wako wa kulia wa rangi ya kijani
