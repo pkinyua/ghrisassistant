@@ -47,7 +47,7 @@ function App() {
             © {new Date().getFullYear()} Pius Gitonga.
           </p>
           <p className="text-xs text-[#6B7A8A] mt-0.5">
-            Need help? Call <span className="font-semibold text-[#4A90D9]">0715086262</span>
+            Need help? Call <span className="font-semibold text-[#4A90D9]">+254715086262</span>
           </p>
         </div>
       </div>

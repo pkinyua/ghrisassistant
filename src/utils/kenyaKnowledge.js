@@ -82,7 +82,7 @@ Nisaidie kwa kuandika swali lako hapa chini.`
     keywords: ['system does not recognize', 'not recognize'],
     response: `⚠️ Kusuluhisha 'System does not recognize':
 
-1. Kama umepokea mshahara wako wa kwanza mwezi huu, utaweza kujisaji baada ya tarehe tano (5) mwezi unaofuata
+1. Kama umepokea mshahara wako wa kwanza mwezi huu, utaweza kujisajili baada ya tarehe tano (5) mwezi unaofuata
 2. Hakikisha umeweka Namba ya Mfanyakazi, Kitambulisho (ID), KRA PIN na jina la ukoo kimakinifu
 3. Jaribu kutumia jina lako la kwanza na la pili badala ya jina la ukoo`
   },
@@ -123,7 +123,7 @@ Nisaidie kwa kuandika swali lako hapa chini.`
     keywords: ['helpdesk', 'contact', 'support', 'wasiliana', 'msaada', 'phone', 'simu', 'email'],
     response: `📞 Mawasiliano ya GHRIS Helpdesk:
 
-📞 Simu: 0715086262
+📞 Simu: +254715086262
 📧 Barua Pepe: piugit@outlook.com
 ⏰ Saa za Kazi: Jumatatu-Ijumaa, 8:00 AM - 5:00 PM
 📍 Pius Gitonga`
