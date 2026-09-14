@@ -73,7 +73,7 @@ Nisaidie kwa kuandika swali lako hapa chini.`
 3. Wasiliana na HR ili kupata tarehe haswa ya DOFA`
   },
   serverError: {
-    keywords: ['404', '504', 'Not found'],
+    keywords: ['404', '504'],
     response: `⚠️ Server Error 404/HTTP Error 504:
 
 • Subiri, GHRIS portal itarejea baada ya ukarabati`
