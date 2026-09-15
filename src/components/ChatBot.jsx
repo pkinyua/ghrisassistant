@@ -71,7 +71,7 @@ const ChatBot = () => {
     { icon: '📞', label: 'Contact Helpdesk', value: 'How to contact helpdesk?' },
     { icon: '⚠️', label: 'System Access Challenge Error', value: 'How do I get past system access challenge error?' },
     { icon: '⚠️', label: 'System does not recognize', value: 'The system does not recognize me' },
-    /*{ icon: '⚠️', label: 'Server Error 404/HTTP Error 504', value: 'Getting server error 404/http error 504 when I try accessing GHRIS'},*/
+    { icon: '⚠️', label: 'Server Error 404/HTTP Error 504', value: 'Getting server error 404/http error 504 when I try accessing GHRIS'},
     { icon: '📅', label: 'Date of First Appointment', value: 'The date of first appointment I enter does not work' },
     { icon: '💡', label: 'Terms of Engangement', value: 'The terms of engagement I choose do not work' },
   ];
