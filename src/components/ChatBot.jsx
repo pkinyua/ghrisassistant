@@ -69,7 +69,7 @@ const ChatBot = () => {
     { icon: '📄', label: 'Upload Documents', value: 'I want to upload my documents after appointment' },
     { icon: '📄', label: 'Registration', value: 'I want to register on GHRIS' },
     { icon: '📞', label: 'Contact Helpdesk', value: 'How to contact helpdesk?' },
-    { icon: '⚠️', label: 'System Access Challenge Error', value: 'How do I get past system access challenge error?' },
+    { icon: '⚠️', label: 'System Access Challenge Error', value: 'I am getting system access challenge/timeout?' },
     { icon: '⚠️', label: 'System does not recognize', value: 'The system does not recognize me' },
     { icon: '⚠️', label: 'Server Error 404/HTTP Error 504', value: 'Getting server error 404/http error 504 when I try accessing GHRIS'},
     { icon: '📅', label: 'Date of First Appointment', value: 'The date of first appointment I enter does not work' },
