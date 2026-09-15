@@ -10,7 +10,6 @@ Ninaweza kukusaidia na:
 • 🔒 Kufungua account
 • ⚠️ Kusuluhisha 'System Challenge'
 • ⚠️ Kusuluhisha 'System does not recognize'
-• ⚠️ Server Error 404/HTTP Error 504
 • 💡 Kusuluhisha 'Terms of Engagement'
 • 📅 Kutatua 'Date of First Appointment
 
@@ -19,7 +18,7 @@ Ninaweza kukusaidia na:
 Nisaidie kwa kuandika swali lako hapa chini.`
   },
   register: {
-    keywords: ['register', 'registration', 'kujiandikisha', 'regist'],
+    keywords: ['register', 'registration', 'kujiandikisha', 'regist', 'login', 'log-in'],
     response: `📄 Maelekezo ya Kujisajili:
 
 1. Nenda kwenye portal ya GHRIS
@@ -62,7 +61,10 @@ Nisaidie kwa kuandika swali lako hapa chini.`
 1. Futa historia ya mtandao (clear all browser history)
 2. Tumia mtandao wenye kasi zaidi; badilisha kutoka kwa Wifi utumie data
 3. Badilisha kivinjari unachotumia (badilisha kati ya Google Chrome, Mozilla Firefox and Microsoft Edge)
-4. Badilisha kifaa unachotumia (badilisha kati ya simu, kipakatalishi na tarakilishi)`
+4. Badilisha kifaa unachotumia (badilisha kati ya simu, kipakatalishi na tarakilishi).
+
+Ukipata 'Server Error 404/HTTP Error 504'
+Subiri, GHRIS portal itarejea baada ya ukarabati`
   },
   DOFA: {
     keywords: ['first appointment', 'date of first appointment'],
@@ -72,12 +74,12 @@ Nisaidie kwa kuandika swali lako hapa chini.`
 2. Jaribu kutumia (Date of Current Appointment).
 3. Wasiliana na HR ili kupata tarehe haswa ya DOFA`
   },
-  serverError: {
+ /* serverError: {
     keywords: ['404', '504'],
     response: `⚠️ Server Error 404/HTTP Error 504:
 
 • Subiri, GHRIS portal itarejea baada ya ukarabati`
-  },
+  },*/
   systemDoesNotRecognize: {
     keywords: ['system does not recognize', 'not recognize'],
     response: `⚠️ Kusuluhisha 'System does not recognize':
