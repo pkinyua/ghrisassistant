@@ -7,6 +7,7 @@ const ChatBot = () => {
   const [input, setInput] = useState('');
   const [isTyping, setIsTyping] = useState(false);
   const [showWelcome, setShowWelcome] = useState(true);
+  const [feedback, setFeedback] = useState({});
   const messagesEndRef = useRef(null);
   const inputRef = useRef(null);
 
@@ -26,6 +27,16 @@ const ChatBot = () => {
       }
     }
     return kenyaKnowledge.general.response;
+  };
+
+  const sendFeedback = (messageId, type) => {
+    setFeedback(prev => ({ ...prev, [messageId]: type }));
+    
+    // Optional: Send to backend later
+    console.log(`Feedback for message ${messageId}: ${type}`);
+    
+    // Optional: Show a thank-you toast
+    // alert(`Thank you for your feedback!`);
   };
 
   const handleSend = async () => {
@@ -153,6 +164,33 @@ const ChatBot = () => {
               }`}>
                 {msg.timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
               </div>
+                            {/* 👇 ADD FEEDBACK BUTTONS HERE */}
+              {msg.sender === 'bot' && (
+                <div className="flex items-center gap-2 mt-2.5 pt-2.5 border-t border-[#E8EDF2]">
+                  {feedback[msg.id] ? (
+                    <span className="text-xs text-[#6B7A8A] italic">
+                      {feedback[msg.id] === '👍' ? 'Thanks for your feedback!' : 'Sorry we couldn\'t help. We\'ll improve.'}
+                    </span>
+                  ) : (
+                    <>
+                      <button
+                        onClick={() => sendFeedback(msg.id, '👍')}
+                        className="text-xs px-2.5 py-1 rounded-lg bg-[#F0F6FA] hover:bg-[#E1EDF5] text-[#4A5A6A] transition-all duration-200"
+                        aria-label="Helpful response"
+                      >
+                        👍 Helpful
+                      </button>
+                      <button
+                        onClick={() => sendFeedback(msg.id, '👎')}
+                        className="text-xs px-2.5 py-1 rounded-lg bg-[#F0F6FA] hover:bg-[#E1EDF5] text-[#4A5A6A] transition-all duration-200"
+                        aria-label="Not helpful response"
+                      >
+                        👎 Not helpful
+                      </button>
+                    </>
+                  )}
+                </div>
+              )}
             </div>
           </div>
         ))}
