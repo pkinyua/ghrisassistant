@@ -97,7 +97,7 @@ Nisaidie kwa kuandika swali lako hapa chini.`
   },
   payslip: {
     keywords: ['payslip', 'salary', 'payment', 'pay', 'malipo', 'mshahara'],
-    response: `📄 **Jinsi ya Kupakua Payslip:**
+    response: `📄 Jinsi ya Kupakua Payslip:
 
 1. Ingia kwenye GHRIS
 2. Nenda "My Records" → "My Payslip"
