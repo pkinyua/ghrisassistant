@@ -14,13 +14,16 @@ export const translations = {
     
     // Quick replies
     resetPassword: 'Reset Password',
+    register: 'Registration',
     downloadPayslip: 'Download Payslip',
     contactHelpdesk: 'Contact Helpdesk',
     systemChallenge: 'System Access Challenge',
+    uploadDocuments: 'Upload Documents',
     systemDoesNotRecognize: 'System Does Not Recognize',
     serverError404504: 'Server Error 404/HTTP Error 504',
     termsOfEngagement: 'Terms of Engagement',
     dofa: 'Date of First Appointment',
+    helpDesk: 'Call helpdesk',
     // Input
     inputPlaceholder: 'Type your question here...',
     send: 'Send',
@@ -34,8 +37,8 @@ export const translations = {
     assistant: 'GHRIS Assistant',
     
     // Footer
-    copyright: 'Public Service Commission - Kenya',
-    needHelp: 'Need help? Call',
+    copyright: 'Pius Gitonga',
+    needHelp: 'Need help? +254715086262',
     clearChat: 'Clear',
   },
   
@@ -50,14 +53,20 @@ export const translations = {
     
     // Welcome screen
     welcomeTitle: 'Karibu GHRIS! 👋',
-    welcomeText: 'Niko hapa kukusaidia na huduma za GHRIS. Ninawezaje kukusaidia leo?',
+    welcomeText: 'Niko hapa kukusaidia kuhusu huduma za GHRIS. Ninawezaje kukusaidia leo?',
     
     // Quick replies
     resetPassword: 'Badilisha Nywila',
+    register: 'Kujisajili',
     downloadPayslip: 'Pakua Payslip',
-    accountLocked: 'Akaunti Imefungwa',
-    applyLeave: 'Omba Likizo',
     contactHelpdesk: 'Wasiliana na Helpdesk',
+    systemChallenge: 'Changamoto ya Kuingia kwenye Mfumo',
+    uploadDocuments: 'Pakia Hati',
+    systemDoesNotRecognize: 'Mfumo hautambui',
+    serverError404504: 'Hitilafu ya Seva 404 / Hitilafu ya HTTP 504',
+    termsOfEngagement: 'Makubaliano ya Kazi',
+    dofa: 'Tarehe ya Kwanza ya Kazi',
+    helpDesk: 'Kuwasiliana na helpdesk',
     
     // Input
     inputPlaceholder: 'Andika swali lako hapa...',
@@ -72,8 +81,8 @@ export const translations = {
     assistant: 'Msaidizi wa GHRIS',
     
     // Footer
-    copyright: 'Tume ya Utumishi wa Umma - Kenya',
-    needHelp: 'Unahitaji msaada? Piga',
+    copyright: 'Pius Gitonga',
+    needHelp: 'Unahitaji msaada? Piga +254715086262',
     clearChat: 'Futa',
   }
 };

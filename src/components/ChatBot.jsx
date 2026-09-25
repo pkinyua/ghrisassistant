@@ -1,15 +1,23 @@
 import React, { useState, useRef, useEffect } from 'react';
-import KenyaFlag from './KenyaFlag.jsx';
-import { kenyaKnowledge } from '../utils/kenyaKnowledge.js';
+import KenyaFlag from './KenyaFlag';
+import LanguageToggle from './LanguageToggle';
+import { kenyaKnowledge } from '../utils/kenyaKnowledge';
+import { translations } from '../utils/translations';
 
-const ChatBot = () => {
+const Chatbot = () => {
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState('');
   const [isTyping, setIsTyping] = useState(false);
   const [showWelcome, setShowWelcome] = useState(true);
   const [feedback, setFeedback] = useState({});
+  const [language, setLanguage] = useState(() => {
+    return localStorage.getItem('ghris-language') || 'sw';
+  });
+
   const messagesEndRef = useRef(null);
   const inputRef = useRef(null);
+
+  const t = translations[language];
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -19,24 +27,23 @@ const ChatBot = () => {
     scrollToBottom();
   }, [messages]);
 
+  useEffect(() => {
+    localStorage.setItem('ghris-language', language);
+  }, [language]);
+
   const findResponse = (message) => {
     const lowerMsg = message.toLowerCase();
     for (const [key, topic] of Object.entries(kenyaKnowledge)) {
       if (topic.keywords.some(keyword => lowerMsg.includes(keyword))) {
-        return topic.response;
+        return topic.response[language];
       }
     }
-    return kenyaKnowledge.general.response;
+    return kenyaKnowledge.general.response[language];
   };
 
   const sendFeedback = (messageId, type) => {
     setFeedback(prev => ({ ...prev, [messageId]: type }));
-    
-    // Optional: Send to backend later
     console.log(`Feedback for message ${messageId}: ${type}`);
-    
-    // Optional: Show a thank-you toast
-    // alert(`Thank you for your feedback!`);
   };
 
   const handleSend = async () => {
@@ -75,35 +82,37 @@ const ChatBot = () => {
   };
 
   const quickReplies = [
-    { icon: '🔑', label: 'Reset Password', value: 'I forgot my password' },
-    { icon: '📄', label: 'Download Payslip', value: 'How do I download my payslip?' },
-    { icon: '📄', label: 'Upload Documents', value: 'I want to upload my documents after appointment' },
-    { icon: '📄', label: 'Registration', value: 'I want to register on GHRIS' },
-    { icon: '📞', label: 'Contact Helpdesk', value: 'How to contact helpdesk?' },
-    { icon: '⚠️', label: 'System Access Challenge Error', value: 'I am getting system access challenge/timeout?' },
-    { icon: '⚠️', label: 'System does not recognize', value: 'The system does not recognize me' },
-    { icon: '⚠️', label: 'Server Error 404/HTTP Error 504', value: 'Getting server error 404/http error 504 when I try accessing GHRIS'},
-    { icon: '📅', label: 'Date of First Appointment', value: 'The date of first appointment I enter does not work' },
-    { icon: '💡', label: 'Terms of Engangement', value: 'The terms of engagement I choose do not work' },
+    { icon: '🔑', label: t.resetPassword, value: 'I forgot my password' },
+    { icon: '📄', label: t.downloadPayslip, value: 'How do I download my payslip?' },
+    { icon: '📄', label: t.uploadDocuments, value: 'I want to upload my documents after appointment' },
+    { icon: '📄', label: t.register, value: 'I want to register on GHRIS' },
+    { icon: '📞', label: t.contactHelpdesk, value: 'How can I contact helpdesk' },
+    { icon: '⚠️', label: t.systemChallenge, value: 'I am getting system access challenge/timeout?' },
+    { icon: '⚠️', label: t.systemDoesNotRecognize, value: 'The system does not recognize me' },
+    { icon: '⚠️', label: t.serverError404504, value: 'Getting server error 404/http error 504 when I try accessing GHRIS'},
+    { icon: '📅', label: t.dofa, value: 'The date of first appointment I enter does not work' },
+    { icon: '💡', label: t.termsOfEngagement, value: 'The terms of engagement I choose do not work' },
+
   ];
 
   return (
     <div className="chatbot-container w-[440px] h-[680px] rounded-3xl overflow-hidden flex flex-col relative">
       
-      {/* Header with Blue/Green Gradient */}
+      {/* Header with Language Toggle */}
       <div className="chatbot-header p-5">
         <div className="flex items-center gap-3">
           <KenyaFlag className="flag-small" />
           <div className="flex-1">
             <h1 className="text-xl font-semibold text-white flex items-center gap-2">
-              GHRIS Msaidizi
+              {t.title}
               <span className="text-xs bg-white/20 px-3 py-1 rounded-full font-normal text-white flex items-center gap-1.5">
                 <span className="status-dot"></span>
-                Online
+                {t.online}
               </span>
             </h1>
-            <p className="text-sm text-white/80">Your friendly GHRIS assistant</p>
+            <p className="text-sm text-white/80">{t.subtitle}</p>
           </div>
+          <LanguageToggle language={language} onToggle={setLanguage} />
         </div>
       </div>
 
@@ -115,10 +124,10 @@ const ChatBot = () => {
               <KenyaFlag className="w-12 h-8" />
             </div>
             <h2 className="text-2xl font-semibold text-[#2A3A4A] mb-2">
-              Karibu GHRIS Assistant! 👋
+              {t.welcomeTitle}
             </h2>
             <p className="text-[#4A5A6A] text-base mb-6 max-w-xs mx-auto">
-              I'm here to help you with GHRIS service FAQs. How can I assist you today?
+              {t.welcomeText}
             </p>
             <div className="grid grid-cols-2 gap-3 max-w-sm mx-auto">
               {quickReplies.map((reply, index) => (
@@ -153,7 +162,7 @@ const ChatBot = () => {
               {msg.sender === 'bot' && (
                 <div className="flex items-center gap-2 mb-1.5">
                   <KenyaFlag className="flag-tiny" />
-                  <span className="text-xs font-medium text-[#4A5A6A]">GHRIS Assistant</span>
+                  <span className="text-xs font-medium text-[#4A5A6A]">{t.assistant}</span>
                 </div>
               )}
               <div className="text-sm leading-relaxed whitespace-pre-wrap">
@@ -164,28 +173,26 @@ const ChatBot = () => {
               }`}>
                 {msg.timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
               </div>
-                            {/* 👇 ADD FEEDBACK BUTTONS HERE */}
+
               {msg.sender === 'bot' && (
                 <div className="flex items-center gap-2 mt-2.5 pt-2.5 border-t border-[#E8EDF2]">
                   {feedback[msg.id] ? (
                     <span className="text-xs text-[#6B7A8A] italic">
-                      {feedback[msg.id] === '👍' ? 'Thanks for your feedback!' : 'Sorry we couldn\'t help. We\'ll improve.'}
+                      {feedback[msg.id] === '👍' ? t.thanksFeedback : t.sorryFeedback}
                     </span>
                   ) : (
                     <>
                       <button
                         onClick={() => sendFeedback(msg.id, '👍')}
                         className="text-xs px-2.5 py-1 rounded-lg bg-[#F0F6FA] hover:bg-[#E1EDF5] text-[#4A5A6A] transition-all duration-200"
-                        aria-label="Helpful response"
                       >
-                        👍 Helpful
+                        👍 {t.helpful}
                       </button>
                       <button
                         onClick={() => sendFeedback(msg.id, '👎')}
                         className="text-xs px-2.5 py-1 rounded-lg bg-[#F0F6FA] hover:bg-[#E1EDF5] text-[#4A5A6A] transition-all duration-200"
-                        aria-label="Not helpful response"
                       >
-                        👎 Not helpful
+                        👎 {t.notHelpful}
                       </button>
                     </>
                   )}
@@ -240,7 +247,7 @@ const ChatBot = () => {
             value={input}
             onChange={(e) => setInput(e.target.value)}
             onKeyDown={handleKeyDown}
-            placeholder="Type your question here..."
+            placeholder={t.inputPlaceholder}
             className="chat-input flex-1"
           />
           <button
@@ -251,15 +258,15 @@ const ChatBot = () => {
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/>
             </svg>
-            <span className="hidden sm:inline">Send</span>
+            <span className="hidden sm:inline">{t.send}</span>
           </button>
         </div>
         <p className="text-xs text-[#94A3B8] mt-2 text-center">
-          Press Enter to send · Shift+Enter for new line
+          {t.pressEnter}
         </p>
       </div>
     </div>
   );
 };
 
-export default ChatBot;
+export default Chatbot;
