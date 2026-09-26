@@ -9,7 +9,7 @@ export const translations = {
     available247: 'Available 24/7',
     
     // Welcome screen
-    welcomeTitle: 'Welcome to GHRIS! 👋',
+    welcomeTitle: 'Welcome to GHRIS Assistant! 👋',
     welcomeText: "I'm here to help you with GHRIS services. How can I assist you today?",
     
     // Quick replies
@@ -52,7 +52,7 @@ export const translations = {
     available247: 'Anapatikana 24/7',
     
     // Welcome screen
-    welcomeTitle: 'Karibu GHRIS! 👋',
+    welcomeTitle: 'Karibu kwa GHRIS Msaidizi! 👋',
     welcomeText: 'Niko hapa kukusaidia kuhusu huduma za GHRIS. Ninawezaje kukusaidia leo?',
     
     // Quick replies
