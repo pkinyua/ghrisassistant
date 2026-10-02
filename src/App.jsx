@@ -3,6 +3,7 @@ import ChatBot from './components/ChatBot.jsx';
 import KenyaFlag from './components/KenyaFlag.jsx';
 import { translations } from './utils/translations.js';
 import './index.css';
+import TicketForm from './components/TicketForm.jsx';
 
 function App() {
   const [language, setLanguage] = useState('sw');
@@ -57,5 +58,5 @@ function App() {
     </div>
   );
 }
-
+<TicketForm />
 export default App;

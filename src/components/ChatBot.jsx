@@ -4,6 +4,7 @@ import LanguageToggle from './LanguageToggle';
 import { kenyaKnowledge } from '../utils/kenyaKnowledge';
 import { translations } from '../utils/translations';
 
+
 const Chatbot = () => {
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState('');
