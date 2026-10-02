@@ -3,7 +3,7 @@ import KenyaFlag from './KenyaFlag';
 import LanguageToggle from './LanguageToggle';
 import { kenyaKnowledge } from '../utils/kenyaKnowledge';
 import { translations } from '../utils/translations';
-
+import TicketForm from './components/TicketForm.jsx';
 
 const Chatbot = () => {
   const [messages, setMessages] = useState([]);
@@ -269,5 +269,5 @@ const Chatbot = () => {
     </div>
   );
 };
-
+<TicketForm />
 export default Chatbot;
