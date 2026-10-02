@@ -44,7 +44,7 @@ function App() {
 
         {/* Chatbot */}
         <ChatBot />
-
+<TicketForm />
         {/* Footer */}
         <div className="text-center mt-4">
           <p className="text-xs text-[#94A3B8]">
@@ -58,5 +58,5 @@ function App() {
     </div>
   );
 }
-<TicketForm />
+
 export default App;
