@@ -44,7 +44,9 @@ function App() {
 
         {/* Chatbot */}
         <ChatBot />
+        <div className="w-[440px] mt-4 bg-white border-2 border-[#E1EDF5] rounded-2xl p-5 shadow-soft"> 
 <TicketForm />
+</div>
         {/* Footer */}
         <div className="text-center mt-4">
           <p className="text-xs text-[#94A3B8]">
