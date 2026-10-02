@@ -91,14 +91,7 @@ const TicketForm = () => {
   return (
     <form ref={form} onSubmit={handleSubmit} className="p-4 border rounded-lg bg-white shadow-sm">
       <h3 className="font-semibold text-[#2A3A4A] mb-2">Open a Support Ticket</h3>
-      <textarea
-        name="user_name"
-        placeholder="Enter your name..."
-        className="w-full p-2 border rounded-md focus:outline-none focus:border-[#4A90D9]"
-        rows="1"
-        required
-      />
-      <textarea
+        <textarea
         name="user_name"
         placeholder="Enter your name..."
         className="w-full p-2 border rounded-md focus:outline-none focus:border-[#4A90D9]"
