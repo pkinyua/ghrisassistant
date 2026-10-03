@@ -19,7 +19,7 @@ const TicketForm = () => {
       officerEmail: 'pius.is.piugit2@gmail.com',
     },
     {
-      keywords: ['terms of engagement', 'probation'],
+      keywords: ['terms of engagement', 'probation',],
       issueType: 'Engagement terms',
       officerEmail: 'pius.is.piugit2@gmail.com',
     },
@@ -91,53 +91,7 @@ const TicketForm = () => {
   return (
     <form ref={form} onSubmit={handleSubmit} className="p-4 border rounded-lg bg-white shadow-sm">
       <h3 className="font-semibold text-[#2A3A4A] mb-2">Open a Support Ticket</h3>
-        <textarea
-        name="user_name"
-        placeholder="Enter your name..."
-        className="w-full p-2 border rounded-md focus:outline-none focus:border-[#4A90D9]"
-        rows="1"
-        required
-      />
-      <textarea
-        name="id_num"
-        placeholder="Enter ID number..."
-        className="w-full p-2 border rounded-md focus:outline-none focus:border-[#4A90D9]"
-        rows="1"
-        required
-      />
-      <textarea
-        name="UPN_num"
-        placeholder="Enter personal number..."
-        className="w-full p-2 border rounded-md focus:outline-none focus:border-[#4A90D9]"
-        rows="1"
-        required
-      />
-      <textarea
-        name="phone_num"
-        placeholder="Enter phone number..."
-        className="w-full p-2 border rounded-md focus:outline-none focus:border-[#4A90D9]"
-        rows="1"
-        required
-      />
-      <textarea
-        name="reply_email"
-        placeholder="Enter your email..."
-        className="w-full p-2 border rounded-md focus:outline-none focus:border-[#4A90D9]"
-        rows="1"
-        required 
-      />
-      <textarea
-        name="reply_cc"
-        placeholder="Enter CC email..."
-        className="w-full p-2 border rounded-md focus:outline-none focus:border-[#4A90D9]"
-        rows="1"
-      />
-      <textarea
-        name="reply_bcc"
-        placeholder="Enter BCC email..."
-        className="w-full p-2 border rounded-md focus:outline-none focus:border-[#4A90D9]"
-        rows="1"
-      />
+        
       <textarea
         name="ticket_message"
         placeholder="Describe your concern (e.g., password reset, payslip issue)..."
