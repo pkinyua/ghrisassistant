@@ -11,17 +11,17 @@ const TicketForm = () => {
     {
       keywords: ['wrong id', 'surname', 'details'],
       issueType: 'Personal Details Issue',
-      officerEmail: 'pius.is.piugit2@gmail.com',
+      officerEmail: 'dennhome@gmail.com',
     },
     {
       keywords: ['system does not recognize', 'registration', 'reset'],
       issueType: 'Registration & Reset',
-      officerEmail: 'pius.is.piugit2@gmail.com',
+      officerEmail: 'dennhome@gmail.com',
     },
     {
       keywords: ['terms of engagement', 'probation'],
       issueType: 'Engagement Terms',
-      officerEmail: 'pius.is.piugit2@gmail.com',
+      officerEmail: 'dennhome@gmail.com',
     },
   ];
 
@@ -51,7 +51,7 @@ const TicketForm = () => {
     if (!matchedRule) {
       matchedRule = {
         issueType: 'General Inquiry',
-        officerEmail: 'pius.is.piugit2@gmail.com',
+        officerEmail: 'dennhome@gmail.com',
       };
     }
 
