@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import ChatBot from './components/ChatBot.jsx';
+import TicketForm from './components/TicketForm.jsx';
 import KenyaFlag from './components/KenyaFlag.jsx';
 import { translations } from './utils/translations.js';
 import './index.css';
@@ -9,20 +10,19 @@ function App() {
   const [language, setLanguage] = useState('sw');
   const t = translations[language];
   return (
-    <div className="min-h-screen flex items-center justify-center p-4 relative">
-      
-      {/* Decorative subtle elements */}
-      <div className="absolute top-6 left-6 opacity-20">
-        <KenyaFlag className="w-12 h-8" />
-      </div>
-      <div className="absolute bottom-6 right-6 opacity-20 transform rotate-180">
-        <KenyaFlag className="w-12 h-8" />
-      </div>
+    <div className="min-h-screen bg-gradient-to-br from-[#F0F6FA] via-[#E1EDF5] to-[#F0F5F2] py-8 px-4 relative">
+  {/* Decorative flags */}
+  <div className="absolute top-6 left-6 opacity-20">
+    <KenyaFlag className="w-12 h-8" />
+  </div>
+  <div className="absolute bottom-6 right-6 opacity-20 transform rotate-180">
+    <KenyaFlag className="w-12 h-8" />
+  </div>
       
       {/* Main Content */}
-      <div className="relative z-10">
+      <div className="relative z-10 flex flex-col items-center gap-4">
         {/* Title with tiny flag */}
-        <div className="text-center mb-5">
+        <div className="text-center mb-1">
           <div className="flex items-center justify-center gap-2.5 mb-1.5">
             <KenyaFlag className="flag-small" />
             <h1 className="text-3xl font-semibold text-[#2A3A4A]">
@@ -45,10 +45,10 @@ function App() {
         {/* Chatbot */}
         <ChatBot />
        
-
+        <TicketForm />
 
         {/* Footer */}
-        <div className="text-center mt-4">
+        <div className="text-center">
           <p className="text-xs text-[#94A3B8]">
             © {new Date().getFullYear()} {t.copyright}.
           </p>
