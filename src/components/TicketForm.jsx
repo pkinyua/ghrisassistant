@@ -59,18 +59,18 @@ const TicketForm = () => {
   };
 }
 
+const allCCs = (matchedRule.ccEmails || []).join(', ');
     
 const templateParams = {
   issue_type: matchedRule.issueType,
   message: messageText,
   to_email: matchedRule.officerEmail,
-  cc_email: matchedRule.ccEmails,
   from_name: userName,
   id_num: IDnum,
   upn: UPNnum,
   phone_no: phoneNumber,
   email: replyemail,
-          
+  cc_email: allCCs,
   
 };
 
