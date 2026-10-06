@@ -40,7 +40,7 @@ const TicketForm = () => {
     const UPNnum = form.current.upn_num.value.trim();
     const phoneNumber = form.current.phone_num.value.trim();
     const replyemail = form.current.reply_email.value.trim();
-    const replycc = form.current.reply_cc.value.trim();
+    
     
 
     let matchedRule = null;
