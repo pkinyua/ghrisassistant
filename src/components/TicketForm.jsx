@@ -11,8 +11,8 @@ const TicketForm = () => {
   {
     keywords: ['wrong id', 'surname', 'details'],
     issueType: 'Personal Details Issue',
-    officerEmail: 'pius.is.piugit2@gmail.com',
-    ccEmails: ['migwijoe2020@gmail.com'],
+    officerEmail: 'dennhome@gmail.com',
+    ccEmails: ['ikiara_faith02@yahoo.com', 'maureenakoth3@gmail.com', 'muriithi.mwai@ict.go.ke' , 'pius.is.piugit2@gmail.com'],
   },
   {
     keywords: ['system does not recognize', 'registration', 'reset'],
@@ -92,7 +92,7 @@ const templateParams = {
   };
 
   return (
-    <div className="w-[440px] mt-4">
+    <div className="w-full max-w-[440px] mt-4">
       {/* Toggle Button */}
       <button
         type="button"
@@ -112,7 +112,7 @@ const templateParams = {
         <div className="mt-3 border-2 border-[#E1EDF5] rounded-2xl bg-white shadow-soft bubble-enter overflow-hidden">
           <form ref={form} onSubmit={handleSubmit} className="flex flex-col">
             {/* Scrollable Fields */}
-            <div className="p-5 space-y-3 overflow-y-auto" style={{ maxHeight: '500px' }}>
+            <div className="p-4 sm:p-5 space-y-3 overflow-y-auto" style={{ maxHeight: 'min(500px, 60vh)' }}>
               <h3 className="font-semibold text-[#2A3A4A] mb-2">
                 Open a Support Ticket
               </h3>

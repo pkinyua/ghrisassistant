@@ -10,12 +10,12 @@ function App() {
   const [language, setLanguage] = useState('sw');
   const t = translations[language];
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#F0F6FA] via-[#E1EDF5] to-[#F0F5F2] py-8 px-4 relative">
+    <div className="min-h-screen bg-gradient-to-br from-[#F0F6FA] via-[#E1EDF5] to-[#F0F5F2] py-4 sm:py-8 px-3 sm:px-4 relative">
   {/* Decorative flags */}
-  <div className="absolute top-6 left-6 opacity-20">
+  <div className="hidden md:block absolute top-6 left-6 opacity-20">
     <KenyaFlag className="w-12 h-8" />
   </div>
-  <div className="absolute bottom-6 right-6 opacity-20 transform rotate-180">
+  <div className="hidden md:block absolute bottom-6 right-6 opacity-20 transform rotate-180">
     <KenyaFlag className="w-12 h-8" />
   </div>
       
@@ -25,7 +25,7 @@ function App() {
         <div className="text-center mb-1">
           <div className="flex items-center justify-center gap-2.5 mb-1.5">
             <KenyaFlag className="flag-small" />
-            <h1 className="text-3xl font-semibold text-[#2A3A4A]">
+            <h1 className="text-2xl sm:text-3xl font-semibold text-[#2A3A4A]">
               {t.title}
             </h1>
           </div>

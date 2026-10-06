@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html, body {
+  overflow-x: hidden;
+}
+
 @layer base {
   body {
     @apply min-h-screen;
@@ -59,7 +63,7 @@
 
   /* Quick Reply Buttons */
   .quick-reply-btn {
-    @apply px-6 py-3.5 text-sm font-medium rounded-2xl transition-all duration-300;
+    @apply px-4 sm:px-6 py-2.5 sm:py-3.5 text-xs sm:text-sm font-medium rounded-2xl transition-all duration-300;
     background: #FFFFFF;
     color: #2A3A4A;
     border: 2px solid rgba(74, 144, 217, 0.12);

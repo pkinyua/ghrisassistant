@@ -97,10 +97,10 @@ const Chatbot = () => {
   ];
 
   return (
-    <div className="chatbot-container w-[440px] h-[680px] rounded-3xl overflow-hidden flex flex-col relative">
+    <div className="chatbot-container w-full max-w-[440px] h-[calc(100vh-120px)] max-h-[680px] min-h-[500px] rounded-3xl overflow-hidden flex flex-col relative">
       
       {/* Header with Language Toggle */}
-      <div className="chatbot-header p-5">
+      <div className="chatbot-header p-3 sm:p-5">
         <div className="flex items-center gap-3">
           <KenyaFlag className="flag-small" />
           <div className="flex-1">
