@@ -60,25 +60,17 @@ const TicketForm = () => {
 }
 
     
-const formCCs = replycc
-  ? replycc.split(',').map(e => e.trim()).filter(Boolean)
-  : [];
-
-const autoCCs = matchedRule.ccEmails || [];
-
-
-const allCCs = [...new Set([...formCCs, ...autoCCs])].join(', ');
-
 const templateParams = {
   issue_type: matchedRule.issueType,
   message: messageText,
   to_email: matchedRule.officerEmail,
+  cc_email: matchedRule.ccEmails,
   from_name: userName,
   id_num: IDnum,
   upn: UPNnum,
   phone_no: phoneNumber,
   email: replyemail,
-  cc_email: allCCs,        
+          
   
 };
 
