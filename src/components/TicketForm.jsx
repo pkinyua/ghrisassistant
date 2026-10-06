@@ -8,22 +8,25 @@ const TicketForm = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const routingRules = [
-    {
-      keywords: ['wrong id', 'surname', 'details'],
-      issueType: 'Personal Details Issue',
-      officerEmail: 'dennhome@gmail.com',
-    },
-    {
-      keywords: ['system does not recognize', 'registration', 'reset'],
-      issueType: 'Registration & Reset',
-      officerEmail: 'dennhome@gmail.com',
-    },
-    {
-      keywords: ['terms of engagement', 'probation'],
-      issueType: 'Engagement Terms',
-      officerEmail: 'dennhome@gmail.com',
-    },
-  ];
+  {
+    keywords: ['wrong id', 'surname', 'details'],
+    issueType: 'Personal Details Issue',
+    officerEmail: 'pius.is.piugit2@gmail.com',
+    ccEmails: ['migwijoe2020@gmail.com'],
+  },
+  {
+    keywords: ['system does not recognize', 'registration', 'reset'],
+    issueType: 'Registration & Reset',
+    officerEmail: 'dennhome@gmail.com',
+    ccEmails: ['ikiara_faith02@yahoo.com', 'maureenakoth3@gmail.com', 'muriithi.mwai@ict.go.ke' , 'pius.is.piugit2@gmail.com'],
+  },
+  {
+    keywords: ['terms of engagement', 'probation'],
+    issueType: 'Engagement Terms',
+    officerEmail: 'dennhome@gmail.com',
+    ccEmails: ['ikiara_faith02@yahoo.com', 'maureenakoth3@gmail.com', 'muriithi.mwai@ict.go.ke' , 'pius.is.piugit2@gmail.com'],
+  },
+];
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -38,7 +41,7 @@ const TicketForm = () => {
     const phoneNumber = form.current.phone_num.value.trim();
     const replyemail = form.current.reply_email.value.trim();
     const replycc = form.current.reply_cc.value.trim();
-    const replybcc = form.current.reply_bcc.value.trim();
+    
 
     let matchedRule = null;
     for (const rule of routingRules) {
@@ -49,24 +52,35 @@ const TicketForm = () => {
     }
 
     if (!matchedRule) {
-      matchedRule = {
-        issueType: 'General Inquiry',
-        officerEmail: 'dennhome@gmail.com',
-      };
-    }
+  matchedRule = {
+    issueType: 'General Inquiry',
+    officerEmail: 'dennhome@gmail.com',
+    ccEmails: ['ikiara_faith02@yahoo.com', 'maureenakoth3@gmail.com', 'muriithi.mwai@ict.go.ke' , 'pius.is.piugit2@gmail.com'],
+  };
+}
 
-    const templateParams = {
-      issue_type: matchedRule.issueType,
-      message: messageText,
-      to_email: matchedRule.officerEmail,
-      from_name: userName,
-      id_num: IDnum,
-      upn: UPNnum,
-      phone_no: phoneNumber,
-      email: replyemail,
-      cc_email: replycc,
-      bcc_email: replybcc,
-    };
+    
+const formCCs = replycc
+  ? replycc.split(',').map(e => e.trim()).filter(Boolean)
+  : [];
+
+const autoCCs = matchedRule.ccEmails || [];
+
+
+const allCCs = [...new Set([...formCCs, ...autoCCs])].join(', ');
+
+const templateParams = {
+  issue_type: matchedRule.issueType,
+  message: messageText,
+  to_email: matchedRule.officerEmail,
+  from_name: userName,
+  id_num: IDnum,
+  upn: UPNnum,
+  phone_no: phoneNumber,
+  email: replyemail,
+  cc_email: allCCs,        
+  
+};
 
     try {
       await emailjs.send(
@@ -146,18 +160,7 @@ const TicketForm = () => {
                 className="w-full px-4 py-2.5 text-sm border-2 border-[#E8EDF2] rounded-xl focus:outline-none focus:border-[#6BA3D6] focus:ring-2 focus:ring-[#6BA3D6]/20 transition-all bg-[#F8FAFC]"
                 required
               />
-              <input
-                type="email"
-                name="reply_cc"
-                placeholder="Enter CC email (optional)..."
-                className="w-full px-4 py-2.5 text-sm border-2 border-[#E8EDF2] rounded-xl focus:outline-none focus:border-[#6BA3D6] focus:ring-2 focus:ring-[#6BA3D6]/20 transition-all bg-[#F8FAFC]"
-              />
-              <input
-                type="email"
-                name="reply_bcc"
-                placeholder="Enter BCC email (optional)..."
-                className="w-full px-4 py-2.5 text-sm border-2 border-[#E8EDF2] rounded-xl focus:outline-none focus:border-[#6BA3D6] focus:ring-2 focus:ring-[#6BA3D6]/20 transition-all bg-[#F8FAFC]"
-              />
+              
               <textarea
                 name="ticket_message"
                 placeholder="Describe your concern (e.g., password reset, payslip issue)..."
