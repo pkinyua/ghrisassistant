@@ -12,7 +12,7 @@ const TicketForm = () => {
     keywords: ['wrong id', 'surname', 'details'],
     issueType: 'Personal Details Issue',
     officerEmail: 'dennhome@gmail.com',
-    ccEmails: ['pius.is.piugit2@gmail.com'],
+    ccEmails: ['ikiara_faith02@yahoo.com', 'maureenakoth3@gmail.com', 'muriithi.mwai@ict.go.ke' , 'pius.is.piugit2@gmail.com'],
   },
   {
     keywords: ['system does not recognize', 'registration', 'reset'],
@@ -84,7 +84,7 @@ const templateParams = {
       setStatus('✅ Ticket sent successfully! An officer will be in touch.');
       form.current.reset();
     } catch (error) {
-      console.error('EmailJS Error:', error);
+      console.error('EmailJS Full Error:', error);
       setStatus('❌ Failed to send ticket. Please try again.');
     } finally {
       setIsLoading(false);
